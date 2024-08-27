@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.FuwuzhanyuyueDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.FuwuzhanyuyueEntity" id="fuwuzhanyuyueMap">
+        <result property="fuwuzhanmingcheng" column="fuwuzhanmingcheng"/>
+        <result property="fuwushijian" column="fuwushijian"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="keyuerenshu" column="keyuerenshu"/>
+        <result property="yuyueshijian" column="yuyueshijian"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.FuwuzhanyuyueView" >
+
+		SELECT  fuwuzhanyuyue.* FROM fuwuzhanyuyue  fuwuzhanyuyue 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.FuwuzhanyuyueView" >
+		SELECT * FROM fuwuzhanyuyue  fuwuzhanyuyue <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
